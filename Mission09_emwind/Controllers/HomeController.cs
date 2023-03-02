@@ -17,6 +17,7 @@ namespace Mission09_emwind.Controllers
             repo = temp;
         }
 
+        // set up index action to display pages with 10 books on each
         public IActionResult Index(int pageNum = 1)
         {
             int pageSize = 10;

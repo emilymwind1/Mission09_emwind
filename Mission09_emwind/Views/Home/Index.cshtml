@@ -2,23 +2,30 @@
 }
 
 @model BooksViewModel
-
-
-<h1>Books</h1>
-<br />
-
+<!-- Print book info for each book in our database-->
 @foreach (Book b in Model.Books)
 {
-    <h3>Title: @b.Title</h3>
-    <p>Author: @b.Author</p>
-    <p>Publisher: @b.Publisher</p>
-    <p>ISBN: @b.Isbn</p>
-    <p>Classification: @b.Classification</p>
-    <p>Category: @b.Category</p>
-    <p>Page Count: @b.PageCount</p>
-    <p>Price: $@b.Price</p>
-    <br />
+    // set boostrap
+    <div class="card card-outline-primary m-1 p-1">
+        <div class="bg-faded p-1">
+            <h4>
+                @b.Title
+                <span class="badge badge-pill badge-primary" style="float:right">
+                    <small>$@b.Price</small>
+                </span>
+            </h4>
+        </div>
+        <div class="card-text p-1">Author: @b.Author</div>
+        <div class="card-text p-1">Publisher: @b.Publisher</div>
+        <div class="card-text p-1">ISBN: @b.Isbn</div>
+        <div class="card-text p-1">Classification: @b.Classification</div>
+        <div class="card-text p-1">Category: @b.Category</div>
+        <div class="card-text p-1">Page Count: @b.PageCount</div>
+    </div>
 }
 
-<a asp-action="Index" asp-route-pageNum="1"></a>
-<a asp-action="Index" asp-route-pageNum="2"></a>
+<!-- Create buttons for each page -->
+<div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1">
+</div>
