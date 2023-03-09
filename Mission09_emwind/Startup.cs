@@ -52,11 +52,19 @@ namespace Mission09_emwind
 
             app.UseEndpoints(endpoints =>
             {
+
+                endpoints.MapControllerRoute("typepage",
+                    "{bookCategory}/Page{pageNum}",
+                new { Controller = "Home", Action = "Index" });
+
                 endpoints.MapControllerRoute(
-                name: "Paging",
-                pattern: "Page{pageNum}",
-                defaults: new { Controller = "Home", Action = "Index" }
-                );
+                "Paging",
+                "Page{pageNum}",
+                new { Controller = "Home", Action = "Index", pageNum = 1 });
+
+                endpoints.MapControllerRoute("type",
+                    "{bookCategory}",
+                    new { Controller = "Home", action="Index", pageNum = 1});
 
                 endpoints.MapDefaultControllerRoute();
 

@@ -5,8 +5,9 @@
 <!-- Print book info for each book in our database-->
 @foreach (Book b in Model.Books)
 {
-    <partial name="ProjectSummary" model="b"/>
+    <partial name="ProjectSummary" model="b" />
 }
+
 
 <!-- Create buttons for each page -->
 <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
