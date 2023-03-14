@@ -4,10 +4,16 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <!--bring in bootstrap-->
+    <link href="~/lib/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <!--Set boostrap styles for the shared layout-->
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand ml-2">BOOKS</span>
+    </div>
+    <div class="row m-1 p-1">
+            @RenderBody()
     </div>
 </body>
 </html>
