@@ -9,7 +9,7 @@ namespace Mission09_emwind.Models
     {
         public List<BasketLineItem> Items { get; set; } = new List<BasketLineItem>();
 
-        public void AddItem (Book bo, int qty)
+        public virtual void AddItem (Book bo, int qty)
         {
             BasketLineItem line = Items
                 .Where(b => b.Book.BookId == bo.BookId)
@@ -30,6 +30,16 @@ namespace Mission09_emwind.Models
             }
         }
 
+        public virtual void RemoveItem (Book bo)
+        {
+            Items.RemoveAll(x => x.Book.BookId == bo.BookId);
+        }
+
+        public virtual void ClearBasket()
+        {
+            Items.Clear();
+        }
+
         public double CalculateTotal()
         {
             double sum = Items.Sum(x => x.Quantity * x.Book.Price);
@@ -37,7 +47,6 @@ namespace Mission09_emwind.Models
             return sum;
         }
     }
-
 
     public class BasketLineItem
     {
