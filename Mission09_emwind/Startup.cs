@@ -37,6 +37,8 @@ namespace Mission09_emwind
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
 
             services.AddRazorPages();
+
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +51,7 @@ namespace Mission09_emwind
 
             // makes it possible to use files in wwwroot
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
