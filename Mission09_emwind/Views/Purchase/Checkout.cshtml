@@ -6,7 +6,7 @@
 <h2>Check out now</h2>
 <p>Please enter your details, and we can process your order.</p>
 
-<form method="post">
+<form method="post" asp-controller="Purchase" asp-action="Checkout">
 
     <h4>Ship To</h4>
     <div class="form-group">
@@ -42,12 +42,6 @@
     <div class="form-group">
         <label asp-for="Country">Country:</label>
         <input asp-for="Country" class="form-control" />
-    </div>
-
-    <div class="checkbox">
-        <label>
-            <input asp-for="Anonymous"/> Purchase Anonymously
-        </label>
     </div>
 
     <div class="float-end">

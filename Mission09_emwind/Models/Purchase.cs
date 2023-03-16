@@ -34,7 +34,5 @@ namespace Mission09_emwind.Models
         [Required(ErrorMessage = "Please enter a country")]
         public string Country { get; set; }
 
-        public bool Anonymous { get; set; }
-
     }
 }
