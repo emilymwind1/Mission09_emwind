@@ -6,8 +6,10 @@
 <h2>Check out now</h2>
 <p>Please enter your details, and we can process your order.</p>
 
+@*form to check out the cart*@
 <form method="post" asp-controller="Purchase" asp-action="Checkout">
 
+    @*error messages if not all required fields are filled*@
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <h4>Ship To</h4>
@@ -46,6 +48,7 @@
         <input asp-for="Country" class="form-control" />
     </div>
 
+    @*submit button to complete the purchase*@
     <div class="float-end">
         <input class="btn btn-primary" type="submit" value="Complete Purchase"/>
     </div>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mission09_emwind.Models
 {
+    //create session so items in cart stay
     public class SessionBasket : Basket
     {
         public static Basket GetBasket (IServiceProvider services)

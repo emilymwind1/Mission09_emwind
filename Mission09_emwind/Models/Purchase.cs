@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mission09_emwind.Models
 {
+    //variables and error messages for checkout
     public class Purchase
     {
         [Key]
