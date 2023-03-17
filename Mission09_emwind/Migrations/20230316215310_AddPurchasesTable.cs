@@ -19,8 +19,7 @@ namespace Mission09_emwind.Migrations
                     City = table.Column<string>(nullable: false),
                     State = table.Column<string>(nullable: false),
                     Zip = table.Column<string>(nullable: true),
-                    Country = table.Column<string>(nullable: false),
-                    Anonymous = table.Column<bool>(nullable: false)
+                    Country = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

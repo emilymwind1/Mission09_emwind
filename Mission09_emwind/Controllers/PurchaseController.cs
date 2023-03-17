@@ -37,7 +37,7 @@ namespace Mission09_emwind.Controllers
                 repo.SavePurchase(purchase);
                 basket.ClearBasket();
 
-                return View();
+                return RedirectToPage("/Confirmation");
             }
             else
             {

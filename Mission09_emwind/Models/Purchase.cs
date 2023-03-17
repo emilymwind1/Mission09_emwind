@@ -16,7 +16,7 @@ namespace Mission09_emwind.Models
         [BindNever]
         public ICollection<BasketLineItem> Lines { get; set; }
 
-        [Required(ErrorMessage ="Please enter a name:")]
+        [Required(ErrorMessage ="Please enter a name")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Please enter the first address line")]
